@@ -51,7 +51,7 @@ namespace Labwork
     interface  ApplicationManagement {
         
         string SelectFile(); // Return path to file
-        void ClearInterface();
+        void ClearInterface(); // Clear user interface
         void EditFile(string path);
         void Synchronization(string path); // sync data from file with user interface
         List<Item> DataFromFileToListItem(string path);
