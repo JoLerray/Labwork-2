@@ -7,7 +7,7 @@ using System.Windows.Forms;
 
 namespace Labwork
 {
-    class Item
+    class Item //Item menu strop class
     {
         public const int MinHierarchyLevel = 0;
         public enum Statuses {
