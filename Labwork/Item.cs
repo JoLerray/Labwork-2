@@ -127,7 +127,7 @@ namespace Labwork
         public ToolStripItemCollection GetStripItems(ToolStrip toolStrip) {
             
             for(int i = 0; i< items.Count;i++) {
-                toolStrip.Items.Add(getStripMenuItem(i));
+                if(items[i].Hierarchy == Item.MinHierarchyLevel) toolStrip.Items.Add(getStripMenuItem(i));
             }
             return toolStrip.Items;
         }
