@@ -77,7 +77,8 @@ namespace Labwork
         }
     }
     class MenuItems {
-       
+        
+        // List items
         List<Item> items;
 
         public MenuItems(List<Item> items) {
