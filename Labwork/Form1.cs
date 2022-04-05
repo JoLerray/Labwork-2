@@ -10,45 +10,45 @@ using System.Windows.Forms;
 
 namespace Labwork
 {
-    public partial class Form1 : Form, ApplicationManagement
+    public partial class Form1 : Form, UserActions
     {
         public Form1()
         {
             InitializeComponent();
-
+            ErrorMessage("SUCK DICK");
         }
 
         public void ErrorMessage(string error)
         {
-                MessageBox.Show(error);
+            MessageBox.Show(error);
         }
 
-        void ApplicationManagement.ClearInterface()
+        void UserActions.ClearInterface()
         {
             throw new NotImplementedException();
         }
 
-        List<Item> ApplicationManagement.DataFromFileToListItem(string path)
+        List<Item> UserActions.DataFromFileToListItem(string path)
         {
             throw new NotImplementedException();
         }
 
-        void ApplicationManagement.EditFile(string path)
+        void UserActions.EditFile(string path)
         {
             throw new NotImplementedException();
         }
 
-        string ApplicationManagement.SelectFile()
+        string UserActions.SelectFile()
         {
             throw new NotImplementedException();
         }
 
-        void ApplicationManagement.Synchronization(string path)
+        void UserActions.Synchronization(string path)
         {
             throw new NotImplementedException();
         }
     }
-    interface  ApplicationManagement {
+    interface  UserActions {
         
         string SelectFile(); // Return path to file
         void ClearInterface(); // Clear user interface

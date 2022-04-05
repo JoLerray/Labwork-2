@@ -7,7 +7,7 @@ using System.Windows.Forms;
 
 namespace Labwork
 {
- //Hello World 
+
     class Item //Item menu strop class
     {
         public const int MinHierarchyLevel = 0;
@@ -85,7 +85,7 @@ namespace Labwork
         public MenuItems(List<Item> items) {
             this.items = items;
         }
-        private ToolStripMenuItem getStripMenuItem(int id, int Hierarchy = Item.MinHierarchyLevel) {
+        private ToolStripMenuItem createStripMenuItem(int id, int Hierarchy = Item.MinHierarchyLevel) {
 
             if (id >= items.Count || id < 0) throw new ArgumentOutOfRangeException("Id is out Of range from List !!!");
             
@@ -118,7 +118,7 @@ namespace Labwork
                 while (Hierarchy < items[id + 1].Hierarchy || id + 1 < items.Count) {
                     
                     if (Hierarchy + 1 == items[id + 1].Hierarchy) {
-                        stripMenuItem.DropDownItems.Add(getStripMenuItem(id + 1,Hierarchy + 1));
+                        stripMenuItem.DropDownItems.Add(createStripMenuItem(id + 1,Hierarchy + 1));
                     }
                     
                     id++;
@@ -129,7 +129,7 @@ namespace Labwork
         public ToolStripItemCollection GetStripItems(ToolStrip toolStrip) {
             
             for(int i = 0; i< items.Count;i++) {
-                if(items[i].Hierarchy == Item.MinHierarchyLevel) toolStrip.Items.Add(getStripMenuItem(i));
+                if(items[i].Hierarchy == Item.MinHierarchyLevel) toolStrip.Items.Add(createStripMenuItem(i));
             }
             return toolStrip.Items;
         }
