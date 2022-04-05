@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 namespace Labwork
 {
-    class Controller : BaseContoller<string,Item>
+    class Controller : BaseContoller, BaseParsing<string, Item>
     {
         private OpenFileDialog file = new OpenFileDialog();
         // all pathes files in App
@@ -44,7 +44,9 @@ namespace Labwork
             }
         }
 
-        public void ClearInterface(Action action) { action.Invoke(); }
+        public void ClearInterface(Action action) { 
+            action.Invoke(); 
+        }
 
         public void CreateFile(string path, string FileName)
         {
@@ -52,6 +54,11 @@ namespace Labwork
         }
 
         public void DeleteFile(string path)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void DeletePath(string path)
         {
             throw new NotImplementedException();
         }
