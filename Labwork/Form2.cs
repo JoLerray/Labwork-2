@@ -12,9 +12,13 @@ namespace Labwork
 {
     public partial class Form2 : Form
     {
+        Controller controller = new Controller(); // MVC - Model View Contoller
+
         public Form2()
         {
+        
             InitializeComponent();
+            //controller.ClearInterface(() => { controller.AddFile(); }); Example lamda function Action
         }
     }
 }
